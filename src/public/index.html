@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Email Processor Setup</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>School Email Processor Setup</h1>
+    
+    <div class="step">
+      <h2>Step 1: Google Configuration</h2>
+      <ol>
+        <li>Go to the <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a></li>
+        <li>Create a new project or select an existing one</li>
+        <li>Enable the Gmail API and Google Calendar API</li>
+        <li>Configure the OAuth consent screen</li>
+        <li>Create OAuth 2.0 credentials (Web application)</li>
+        <li>Add http://localhost:3000/oauth2callback to the authorized redirect URIs</li>
+      </ol>
+      <form id="googleForm">
+        <div class="form-group">
+          <label for="clientId">Google Client ID:</label>
+          <input type="text" id="clientId" required>
+        </div>
+        <div class="form-group">
+          <label for="clientSecret">Google Client Secret:</label>
+          <input type="password" id="clientSecret" required>
+        </div>
+        <button type="submit" class="button">Save Google Configuration</button>
+      </form>
+    </div>
+
+    <div class="step">
+      <h2>Step 2: Twilio Configuration</h2>
+      <ol>
+        <li>Sign up for a <a href="https://www.twilio.com/try-twilio" target="_blank">Twilio account</a></li>
+        <li>Get your Account SID and Auth Token from the Twilio Console</li>
+        <li>Purchase or use an existing Twilio phone number</li>
+      </ol>
+      <form id="twilioForm">
+        <div class="form-group">
+          <label for="accountSid">Account SID:</label>
+          <input type="text" id="accountSid" required>
+        </div>
+        <div class="form-group">
+          <label for="authToken">Auth Token:</label>
+          <input type="password" id="authToken" required>
+        </div>
+        <div class="form-group">
+          <label for="twilioPhone">Twilio Phone Number:</label>
+          <input type="text" id="twilioPhone" placeholder="+1234567890" required>
+        </div>
+        <div class="form-group">
+          <label for="userPhone">Your Phone Number:</label>
+          <input type="text" id="userPhone" placeholder="+1234567890" required>
+        </div>
+        <button type="submit" class="button">Save Twilio Configuration</button>
+      </form>
+    </div>
+  </div>
+  <script src="/script.js"></script>
+</body>
+</html>
